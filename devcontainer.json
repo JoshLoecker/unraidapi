@@ -2,7 +2,7 @@
 {
   "name": "Python with FastAPI",
   // Use the official Python image as a base
-  "image": "your-image-name",
+  "image": "python:3.12",
   // Specify Dockerfile for build
   "dockerFile": "Dockerfile",
   // Set up port forwarding for the FastAPI application
