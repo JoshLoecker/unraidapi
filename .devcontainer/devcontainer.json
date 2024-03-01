@@ -1,0 +1,31 @@
+// .devcontainer/devcontainer.json
+{
+  "name": "Python with FastAPI",
+  // Use the official Python image as a base
+  "image": "python:3.12",
+  // Specify Dockerfile for build
+  "dockerFile": "Dockerfile",
+  // Set up port forwarding for the FastAPI application
+  "forwardPorts": [
+    8000
+  ],
+  // Specify extensions to install in the container
+  "extensions": [
+    "ms-python.python"
+  ],
+  // Set environment variables for the container
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash",
+    "python.pythonPath": "/usr/local/bin/python",
+    "python.venvPath": "/opt/venv",
+    "python.venvFolders": [
+      "/opt/venv"
+    ]
+  },
+  // Add additional commands during container build
+  "postCreateCommand": "poetry install",
+  // Mount the current workspace into the container
+  "mounts": [
+    "source=/path/to/your/project,target=/app,type=bind,consistency=delegated"
+  ]
+}
